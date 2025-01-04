@@ -7,6 +7,12 @@
 *copy en todas las istancias
 *tree view para interaction types
 
+*que los abstract no definan todas las funciones
+
+*usar interface para valores como cantidad de inventario
+
+*change types que no aparezca hasta seleccionar property
+
 *first attempt, second, etc
 *objeto de escena
 *vElem.style.display utils
