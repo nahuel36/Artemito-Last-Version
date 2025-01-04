@@ -15,7 +15,9 @@ public class CustomEnumFlagsField
     [SerializeReference] public List<PropertyVariable> members;
 
     public List<string> GetMembersList()
-    { 
+    {
+            if (members == null) return null;
+
         List<string> membersList = new List<string>();
 
         foreach (var member in members)
