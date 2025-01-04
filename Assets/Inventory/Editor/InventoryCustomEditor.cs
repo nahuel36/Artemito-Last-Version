@@ -30,7 +30,10 @@ public class InventoryCustomEditor : Editor
         Button addButton = root.Q<Button>("add");
         addButton.clicked += () =>
         {
-            myTarget.items.Add(new InventoryItem());
+            myTarget.lastID++;
+            InventoryItem item = new InventoryItem();
+            item.id = myTarget.lastID;
+            myTarget.items.Add(item);
             UpdateItems(root);
         };
 

@@ -5,7 +5,7 @@ namespace Artemito
 [System.Serializable]
 public class InventoryInteraction 
 {
-    public string inventoryName;
+    public int inventoryID;
     public InteractionAttempsContainer interactions;
 }
 }

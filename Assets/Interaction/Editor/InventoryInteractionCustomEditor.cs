@@ -27,22 +27,19 @@ public class InventoryInteractionCustomEditor : Editor
             vElem.Clear();
             DropdownField inventoryField = new DropdownField();
             InventoryInteraction inventoryInt = inventoryInteractions[index];
-            inventoryField.SetBinding("value", new DataBinding
-            {
-                dataSourcePath = new PropertyPath(nameof(inventoryInt.inventoryName)),
-                dataSource = inventoryInt
-            });
+            inventoryField.value = Settings.Instance.inventory.GetIndexAndNameFromID(inventoryInt.inventoryID);
             inventoryField.RegisterValueChangedCallback(evt =>
             {
+                inventoryInt.inventoryID = Settings.Instance.inventory.GetIDFromIndexAndName(evt.newValue);
                 EditorUtility.SetDirty(myTarget);
                 serializedObject.ApplyModifiedProperties();
             });
             for (int i = 0; i < Settings.Instance.inventory.items.Count; i++)
             {
                 if (string.IsNullOrEmpty(Settings.Instance.inventory.items[i].name))
-                    inventoryField.choices.Add(i.ToString());
+                    inventoryField.choices.Add((i+1).ToString()+":");
                 else
-                    inventoryField.choices.Add(Settings.Instance.inventory.items[i].name);
+                    inventoryField.choices.Add((i+1).ToString() + ":" + Settings.Instance.inventory.items[i].name);
             }
 
             vElem.Add(inventoryField);

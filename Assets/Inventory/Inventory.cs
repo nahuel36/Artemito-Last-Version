@@ -11,6 +11,27 @@ namespace Artemito {
 public class Inventory : ScriptableObject, PropertiesContainer
 {
     public List<InventoryItem> items;
+    public int lastID = 0;
+    
+    public int GetIDFromIndexAndName(string index)
+    {
+            index = index.Split(':')[0];
+
+            return items[int.Parse(index)-1].id; ;
+    }   
+
+    public string GetIndexAndNameFromID(int id)
+    {
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i].id == id)
+                {
+                    return (i+1).ToString() + ":" + items[i].name;
+                }
+            }
+
+            return null;
+    }
 
     public List<Property> GetAllProperties(PropertyData data)
     {
