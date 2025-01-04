@@ -1,0 +1,44 @@
+*en escena, crear character de cero no funca
+*cambiar campos en change variable no cambia el view
+*al crear un nuevo verb no se le puede asignar el nombre
+
+*todos los tipos de interactions (set variable, talk, etc)
+*remove interaction
+*copy en todas las istancias
+*tree view para interaction types
+
+*first attempt, second, etc
+*objeto de escena
+*vElem.style.display utils
+*dialog option, inventory, property, verbs por codigo
+
+*namespace artemito
+*revisar todos los using
+
+*propertys en ingame que no cambie el valor del scriptable object
+
+*interaction modes (use, look, etc)
+*properties
+
+backup
+
+*dropdowns propertys, dialogs, inventory
+
+*poner inspector field en properties container
+*detectar automaticamente el property container
+*interaction item
+
+*inventory interactions
+
+*lista de uitoolkit archivos VisualTreeAsset
+*list view custom 
+
+*inventario
+*sub dialogos y nodos
+*interaction add con generic menu
+
+*al iniciar el juego interaction types se borra
+*obtener todas las interacciones strings en el principio
+*list views arreglar make y bind
+*probar que pasa agregar camara cuando property container esta vacio
+*listview set binding (utils)

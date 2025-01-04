@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc21560bbe61b3c4fb47a7b1849787d0, type: 3}
+  m_Name: Settings
+  m_EditorClassIdentifier: 
+  interactionTypes:
+    interactions:
+    - qualifiedName: Artemito.ChangeProperty, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      showName: Change property
+    - qualifiedName: Artemito.CharacterTalk, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      showName: Character talk
+    - qualifiedName: Artemito.GetProperty, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      showName: Get property
+  propertyVariables:
+    types:
+    - qualifiedName: Artemito.IntegerProperty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      showName: integer
+    - qualifiedName: Artemito.StringProperty, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      showName: string
+  verbs:
+  - Name: use
+    isLikeGive: 0
+    isLikeUse: 0
+  - Name: look
+    isLikeGive: 0
+    isLikeUse: 0
+  - Name: talk
+    isLikeGive: 0
+    isLikeUse: 0
+  inventory: {fileID: 11400000, guid: 4ba688b788353fc4099b3fbccc26c291, type: 2}

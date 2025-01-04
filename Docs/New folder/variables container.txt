@@ -1,0 +1,73 @@
+*initializations con members
+
+*cada vez que se cambia el int, chequea los members
+
+*que muestre los editor field solo de los miembros actuales
+
+*chequear tambien por field choices
+
+*cambiar los campos cuando se cambian los choices
+
+*que al copier valores solo copie los seleccionados y los que permiten los fields
+
+*custom flag deberia usar genericos? comprobar si funciona sin ellos
+
+*custom flag no deberia tener members
+
+*comprobar que Enum de PropertyObject no esté usando miembros
+
+*poner show enumerables field en distintas funciones (variables, variables con comparacion, prop object, inventario, subdialogo, opcion de dialogo)
+
+*estudiar que pasa al comparer un valor del int de Enum, y que no tenga todos los campos posibles
+
+
+1 sin genericos
+
+2 problemas con variable types
+
+3 aparece un editor field de mas en modo copy
+
+DESPUES 4 en modo copy poner variable types a lo ultimo
+
+5 ya deberia funcionar que se guarde el dialog
+scriptable object dentro de scriptable objects
+
+6 probar que guarde bien inventario
+
+7 poner save data y load data como privados
+
+8 en ejecute action esta copiando solo el string
+
+9 sigue funcionando mal el flag de variables
+
+10 probar change variable con dialogo
+con string y sin string
+set mode, copy mode
+
+11 pasar interacciones de dialogos
+
+12 prefab de character no guarda interacciones
+
+13 probar interaccion copy dialogo
+
+14 arreglado problemas de character field
+
+14 verificar mas a fondo que funcione todo bien
+
+15 cambiar data local property a generic property
+
+16 no funciona propertys en dialogo
+no guarda variable types ni variable ni variabletocopy
+
+17* boton force save data, force load data, refresh
+
+18 patron observer masivo
+
+19 pensar alguna forma generica de cargar los objects de data
+mantener lista de objetos por cada clase?
+
+20 que se guarde la opcion y el subdialogo
+
+21 por que tarda varios updates en actualizarse?
+
+22 que add or remove muestre el item seleccionado custom list view

@@ -1,0 +1,23 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/TestInteractions/Inventory/Editor/InventoryCustomEditor.uss?fileID=7433441132597879392&amp;guid=d29f995caa6ecfc4db5140d0b9a16536&amp;type=3#InventoryCustomEditor" />
+    <engine:Label text="Inventory" style="position: relative;" />
+    <engine:VisualElement name="items" style="flex-direction: row; flex-wrap: wrap;">
+        <engine:Button text="item" name="item" style="width: 75px; max-width: 75px; max-height: 75px; min-height: 75px; min-width: 75px; height: 75px;" />
+        <engine:Button text="item" name="item" style="width: 75px; max-width: 75px; max-height: 75px; min-height: 75px; min-width: 75px; height: 75px;" />
+        <engine:Button text="item" name="item" style="width: 75px; max-width: 75px; max-height: 75px; min-height: 75px; min-width: 75px; height: 75px;" />
+        <engine:Button text="item" name="item" style="width: 75px; max-width: 75px; max-height: 75px; min-height: 75px; min-width: 75px; height: 75px;" />
+        <engine:Button text="item" name="item" style="width: 75px; max-width: 75px; max-height: 75px; min-height: 75px; min-width: 75px; height: 75px;" />
+        <engine:Button text="item" name="item" style="width: 75px; max-width: 75px; max-height: 75px; min-height: 75px; min-width: 75px; height: 75px;" />
+        <engine:Button text="item" name="item" style="width: 75px; max-width: 75px; max-height: 75px; min-height: 75px; min-width: 75px; height: 75px;" />
+        <engine:Button text="item" name="item" style="width: 75px; max-width: 75px; max-height: 75px; min-height: 75px; min-width: 75px; height: 75px;" />
+        <engine:Button text="item" name="item" style="width: 75px; max-width: 75px; max-height: 75px; min-height: 75px; min-width: 75px; height: 75px;" />
+    </engine:VisualElement>
+    <engine:Button text="Add" name="add" />
+    <engine:VisualElement name="selected" data-source-type="InventoryItem, Assembly-CSharp" enabled="true" style="flex-grow: 1;">
+        <engine:Label text="Selected Item" name="Label" />
+        <engine:TextField label="name" placeholder-text="item name" name="name" data-source-path="name" readonly="false" />
+        <editor:ObjectField label="sprite" type="UnityEngine.Sprite, UnityEngine.CoreModule" data-source-path="image" allow-scene-objects="false" name="sprite" />
+        <engine:Label text="Interactions" />
+        <engine:VisualElement name="interactions" style="flex-grow: 1;" />
+    </engine:VisualElement>
+</engine:UXML>

@@ -1,0 +1,88 @@
+LISTO chequear "fileID : 0" en inventory asset
+
+LISTO no cambia Enum classic
+LISTO no cambia integer
+
+LISTO al agregar character en set local variable no aparecen las opciones
+LISTO say with script, primer character no se guarda
+
+LISTO al elegir Enumflag que aparezcan las opciones
+
+LISTO eliminar seleccionado (chequear custom list view)
+
+LISTO arreglar foldouts, agregar los faltantes y que tengan titulo
+
+LISTO en set local variable si se elegia everything aparecian todas las variables, incluso las que no Debian
+
+LISTO copiar desde un dialogo
+LISTO show y hide visual element en utility
+generalizer change variable para todos los tipos
+
+LISTO arreglar inventory list al seleccionar sin property y luego con property
+
+LISTO que al elegir una variable to copy, se actualizen los tipos de variables
+
+separar items de inventario en archivos aparte
+
+POWERHOOF next occurrence y first option
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+next occurrence o next option (powerquest)
+
+expandir change local variable a todo
+
+change local variable, todo tipo de copia
+
+desarrollar el visor de los dialogos
+
+separar inventario de list inventories
+
+desarrollar otras acciones como agregar inventario
+
+desarrollar la parte visual de nuevo
+
+desarrollar los nuevos tests
+
+
+focus
+
+hacer un debug de efectos especiales
+
+pasar los otros efectos
+
+desarrollar bola lenta y bola rapida
+
+
+ninja
+
+que la linea se multiplique en cierta direccion cuando patea
+
+vibrador de camara
+
+
+
+
+
+
+
+
+
+

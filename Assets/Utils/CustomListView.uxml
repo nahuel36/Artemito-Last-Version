@@ -1,0 +1,3 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:ListView virtualization-method="DynamicHeight" show-border="true" show-alternating-row-backgrounds="All" reorderable="true" horizontal-scrolling="true" show-foldout-header="true" show-add-remove-footer="true" reorder-mode="Animated" />
+</engine:UXML>

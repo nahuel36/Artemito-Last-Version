@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a0a59ba048a5d943b13817c7c39cc1e, type: 3}
+  m_Name: VisualTreeAssets
+  m_EditorClassIdentifier: 
+  customListView: {fileID: 9197481963319205126, guid: 442b3f6793c95e641abc2b72c31d5a82, type: 3}
+  interactionItem: {fileID: 9197481963319205126, guid: b5428c058ef99554091e504c466c04fa, type: 3}
+  inventoryView: {fileID: 9197481963319205126, guid: 6850d88449357314f8886f2a2042adf0, type: 3}
+  characterInteraction: {fileID: 9197481963319205126, guid: 18d9ab6ddc3cdd645b150e98e5b4f50b, type: 3}
+  propertyInteraction: {fileID: 9197481963319205126, guid: 49cfd32cddb6aba458aeaf15382d5b0c, type: 3}
+  dialogPropertyField: {fileID: 9197481963319205126, guid: 5e0d818df66b23646918d253ba23c7f4, type: 3}
+  inventoryPropertyField: {fileID: 9197481963319205126, guid: 3f9b0fe9f121ae147a60ca53461041dd, type: 3}
+  propertyItem: {fileID: 9197481963319205126, guid: b96e2a21e1f31464bb8aab274cbed183, type: 3}
+  changeProperty: {fileID: 9197481963319205126, guid: efe14a7ff822fed4c975209476d727b9, type: 3}

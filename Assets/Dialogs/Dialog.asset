@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca7bb2b618e2444e93a2a16deaf2664, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  subdialogs:
+  - options:
+    - name: 
+      interactions:
+        attemps:
+        - interactions: []
+      properties:
+      - name: 
+        variables:
+          members:
+          - rid: 4780732725858402325
+  references:
+    version: 2
+    RefIds:
+    - rid: 4780732725858402325
+      type: {class: StringProperty, ns: Artemito, asm: Assembly-CSharp}
+      data:
+        value: 

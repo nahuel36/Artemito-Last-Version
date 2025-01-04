@@ -1,0 +1,13 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/TestInteractions/Editor/CharacterCustomEditor.uss?fileID=7433441132597879392&amp;guid=25ddf570c39ef7b468617e20db36dd9d&amp;type=3#CharacterCustomEditor" />
+    <engine:Label text="Hello World! From UXML" />
+    <engine:Label text="Hello World! With Style" class="custom-label" />
+    <engine:ListView reorderable="true" show-alternating-row-backgrounds="All" show-foldout-header="true" reorder-mode="Animated" show-add-remove-footer="true" header-title="interactions" show-border="true" name="Interactions" binding-source-selection-mode="AutoAssign" virtualization-method="DynamicHeight" />
+    <engine:Button text="Add" name="AddInt" />
+    <engine:Toggle label="Toggle" data-source-type="CharacterMogu, Assembly-CSharp" data-source-path="labelenabled" binding-path="labelenabled" />
+    <engine:Label text="Label2">
+        <Bindings>
+            <engine:DataBinding property="enabledSelf" binding-mode="ToTarget" data-source-type="CharacterMogu, Assembly-CSharp" data-source-path="labelenabled" />
+        </Bindings>
+    </engine:Label>
+</engine:UXML>
