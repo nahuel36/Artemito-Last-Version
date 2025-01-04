@@ -26,16 +26,14 @@ public class InteractionVerbCustomEditor : Editor
             vElem.Clear();
             DropdownField verbField = new DropdownField();
             InteractionVerb verb = verbs[index];
-            verbField.SetBinding("value", new DataBinding
-            {
-                dataSourcePath = new PropertyPath(nameof(verb.verbName)),
-                dataSource = verb
-            });
+
             verbField.RegisterValueChangedCallback(evt =>
             {
+                verb.verbID = Settings.Instance.GetVerbIDFromName(evt.newValue);
                 EditorUtility.SetDirty(myTarget);
                 serializedObject.ApplyModifiedProperties();
             });
+            verbField.value = Settings.Instance.GetVerbNameFromID(verb.verbID);
             Settings.Instance.verbs.ForEach(v =>
             {
                 verbField.choices.Add(v.Name);

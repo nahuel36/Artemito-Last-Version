@@ -83,6 +83,14 @@ public class SettingsCustomEditor : Editor
 
         listView.headerTitle = "Verbs";
 
+            listView.itemsAdded += new Action<IEnumerable<int>>((IEnumerable<int> k) =>
+            {
+                Verb newverb = new Verb();
+                myTarget.lastVerbID++;
+                newverb.id = myTarget.lastVerbID;
+                listView.itemsSource[listView.itemsSource.Count - 1] = newverb;
+            });
+            
         return listView;
     }
 }

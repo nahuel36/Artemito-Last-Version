@@ -32,13 +32,17 @@ MonoBehaviour:
         PublicKeyToken=null
       showName: string
   verbs:
-  - Name: use
+  - id: 1
+    Name: use
     isLikeGive: 0
     isLikeUse: 0
-  - Name: look
+  - id: 2
+    Name: talk
     isLikeGive: 0
     isLikeUse: 0
-  - Name: talk
+  - id: 3
+    Name: look
     isLikeGive: 0
     isLikeUse: 0
+  lastVerbID: 3
   inventory: {fileID: 11400000, guid: 4ba688b788353fc4099b3fbccc26c291, type: 2}

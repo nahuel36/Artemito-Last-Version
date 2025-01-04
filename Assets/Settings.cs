@@ -11,6 +11,7 @@ public class Settings : ScriptableObject
     [SerializeField] public InteractionTypes interactionTypes;
     [SerializeField] public PropertyVariableTypes propertyVariables;
     [SerializeField] public List<Verb> verbs;
+        [SerializeField] public int lastVerbID = 0;
     [SerializeField] public Inventory inventory;
     public static Settings Instance
     {
@@ -23,5 +24,25 @@ public class Settings : ScriptableObject
     }
 
     private static Settings _instance;
+
+        public int GetVerbIDFromName(string name) 
+        { 
+            foreach (Verb verb in verbs)
+            {
+                if (verb.Name == name)
+                    return verb.id;
+            }
+            return -1;
+        }
+
+        public string GetVerbNameFromID(int id) 
+        {
+            foreach (Verb verb in verbs)
+            {
+                if (verb.id == id)
+                    return verb.Name;
+            }
+            return null;
+        }
 }
 }
