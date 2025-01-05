@@ -44,5 +44,5 @@ MonoBehaviour:
     Name: look
     isLikeGive: 0
     isLikeUse: 0
-  lastVerbID: 3
+  lastVerbID: 4
   inventory: {fileID: 11400000, guid: 4ba688b788353fc4099b3fbccc26c291, type: 2}

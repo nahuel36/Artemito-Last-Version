@@ -85,25 +85,33 @@ public abstract class PropertyInteraction : Interaction
                 this.data = data;
             }));
 
+            if(data != null) 
+            { 
 
-            List<string> choices = new List<string>();
+                List<string> choices = new List<string>();
 
-            List<Property> propertys = localPropertyContainer.GetAllProperties(data);
+                List<Property> propertys = localPropertyContainer.GetAllProperties(data);
 
-            foreach (Property property in propertys)
-            {
-                choices.Add(property.name);
+                if(propertys == null)
+                    {
+                        return;
+                    }
+
+                foreach (Property property in propertys)
+                {
+                    choices.Add(property.name);
+                }
+
+                field.Q<DropdownField>("property").choices = choices;
+                field.Q<DropdownField>("property").value = propertyName;
+                field.Q<DropdownField>("property").RegisterValueChangedCallback((evt) =>
+                {
+                    propertyName = evt.newValue;
+                    property = localPropertyContainer.GetProperty(this.data, propertyName);
+                    EditorUtility.SetDirty(myTarget);
+                    serializedObject.ApplyModifiedProperties();
+                });
             }
-
-            field.Q<DropdownField>("property").choices = choices;
-            field.Q<DropdownField>("property").value = propertyName;
-            field.Q<DropdownField>("property").RegisterValueChangedCallback((evt) =>
-            {
-                propertyName = evt.newValue;
-                property = localPropertyContainer.GetProperty(this.data, propertyName);
-                EditorUtility.SetDirty(myTarget);
-                serializedObject.ApplyModifiedProperties();
-            });
         }
 
        

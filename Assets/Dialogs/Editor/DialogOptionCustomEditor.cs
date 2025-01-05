@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace Artemito { 
 public class DialogOptionCustomEditor
 {
-    public static VisualElement ShowUI(List<DialogOption> options, UnityEngine.Object myTarget, SerializedObject serializedObject)
+    public static VisualElement ShowUI(List<DialogOption> options, int subDialogIndex, UnityEngine.Object myTarget, SerializedObject serializedObject)
     {
         VisualElement root = new VisualElement();
 
@@ -41,7 +41,10 @@ public class DialogOptionCustomEditor
 
         listView.itemsAdded += new Action<IEnumerable<int>>((IEnumerable<int> k) =>
         {
-            options[options.Count - 1] = new DialogOption();
+            ((Dialog)myTarget).subdialogs[subDialogIndex].lastOptionID++;
+            DialogOption dialogoption = new DialogOption();
+            dialogoption.id = ((Dialog)myTarget).subdialogs[subDialogIndex].lastOptionID;
+            options[options.Count - 1] = dialogoption;
             EditorUtility.SetDirty(myTarget);
             serializedObject.ApplyModifiedProperties();
         });

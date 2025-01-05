@@ -13,20 +13,24 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   subdialogs:
-  - options:
+  - id: 1
+    name: 
+    options:
     - name: 
+      id: 1
       interactions:
-        attemps:
-        - interactions: []
+        attemps: []
       properties:
-      - name: 
+      - name: sub1 opt1 prop1
         variables:
           members:
-          - rid: 4780732725858402325
+          - rid: 4780732747708104789
+    lastOptionID: 1
+  lastSubdialogID: 1
   references:
     version: 2
     RefIds:
-    - rid: 4780732725858402325
+    - rid: 4780732747708104789
       type: {class: StringProperty, ns: Artemito, asm: Assembly-CSharp}
       data:
         value: 

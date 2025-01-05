@@ -32,13 +32,16 @@ public class SubdialogCustomEditor
                 subdialogs[index].options = new System.Collections.Generic.List<DialogOption>();
 
 
-            vElem.Add(DialogOptionCustomEditor.ShowUI(subdialogs[index].options, myTarget, serializedObject));
+            vElem.Add(DialogOptionCustomEditor.ShowUI(subdialogs[index].options, index, myTarget, serializedObject));
 
         };
 
         listView.itemsAdded += new Action<IEnumerable<int>>((IEnumerable<int> k) =>
         {
-            subdialogs[subdialogs.Count - 1] = new Subdialog();
+            Subdialog subdialog = new Subdialog();
+            ((Dialog)myTarget).lastSubdialogID++;
+            subdialog.id = ((Dialog)myTarget).lastSubdialogID; 
+            subdialogs[subdialogs.Count - 1] = subdialog;
             EditorUtility.SetDirty(myTarget);
             serializedObject.ApplyModifiedProperties();
         });

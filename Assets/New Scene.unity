@@ -320,21 +320,26 @@ MonoBehaviour:
       type: {class: ChangeProperty, ns: Artemito, asm: Assembly-CSharp}
       data:
         data:
-          intData1: -1
-          intData2: -1
+          intData1: 1
+          intData2: 1
           intData3: -1
           name: 
-        propertyName: 
-        propertyContainer: {fileID: 0}
+        propertyName: sub1 opt1 prop1
+        propertyContainer: {fileID: 11400000, guid: 4883810cfa1940148a18a283925cbead, type: 2}
         property:
-          name: 
+          name: sub1 opt1 prop1
           variables:
-            members: []
+            members:
+            - rid: 4780732747708104799
         copyContainer: {fileID: 0}
         values:
           name: 
           variables:
             members: []
+    - rid: 4780732747708104799
+      type: {class: StringProperty, ns: Artemito, asm: Assembly-CSharp}
+      data:
+        value: 
 --- !u!4 &746099211
 Transform:
   m_ObjectHideFlags: 0
