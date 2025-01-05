@@ -40,7 +40,17 @@ public class CustomEnumFlagsEditor : MonoBehaviour
             menu.AddItem(new GUIContent(Settings.Instance.propertyVariables.GetVariableName(type)), false, () =>
             {
                 PropertyVariable newvariable = Settings.Instance.propertyVariables.GetVariableInstance(type);
-                properties.Add(new Property(){ variables = new CustomEnumFlagsField() { members = new List<PropertyVariable> { newvariable } } });
+                properties.Add(new Property()
+                {
+                    id=Property.GetLastID(properties)+1, 
+                    variables = new CustomEnumFlagsField() 
+                    { 
+                        members = new List<PropertyVariable> 
+                        { 
+                            newvariable 
+                        } 
+                    } 
+                });
                 list.itemsSource = null;
                 list.itemsSource = properties;
                 list.Rebuild();

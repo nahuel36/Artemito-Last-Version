@@ -286,14 +286,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   properties:
-  - name: simon prop1
+  - id: 1
+    name: 
     variables:
       members:
-      - rid: 4780732725858402304
-  - name: simon prop2
+      - rid: 4780732755833258061
+  - id: 2
+    name: 
     variables:
       members:
-      - rid: 4780732725858402305
+      - rid: 4780732755833258062
   verbs:
   - verbID: 2
     interactions:
@@ -308,14 +310,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 4780732725858402304
-      type: {class: IntegerProperty, ns: Artemito, asm: Assembly-CSharp}
-      data:
-        value: 0
-    - rid: 4780732725858402305
-      type: {class: StringProperty, ns: Artemito, asm: Assembly-CSharp}
-      data:
-        value: 
     - rid: 4780732743515373650
       type: {class: ChangeProperty, ns: Artemito, asm: Assembly-CSharp}
       data:
@@ -324,19 +318,29 @@ MonoBehaviour:
           intData2: 1
           intData3: -1
           name: 
-        propertyName: sub1 opt1 prop1
+        propertyID: 1
         propertyContainer: {fileID: 11400000, guid: 4883810cfa1940148a18a283925cbead, type: 2}
         property:
-          name: sub1 opt1 prop1
+          id: 1
+          name: sub1 opt1 propA
           variables:
             members:
-            - rid: 4780732747708104799
+            - rid: 4780732755833258064
         copyContainer: {fileID: 0}
         values:
+          id: 0
           name: 
           variables:
             members: []
-    - rid: 4780732747708104799
+    - rid: 4780732755833258061
+      type: {class: IntegerProperty, ns: Artemito, asm: Assembly-CSharp}
+      data:
+        value: 0
+    - rid: 4780732755833258062
+      type: {class: StringProperty, ns: Artemito, asm: Assembly-CSharp}
+      data:
+        value: 
+    - rid: 4780732755833258064
       type: {class: StringProperty, ns: Artemito, asm: Assembly-CSharp}
       data:
         value: 

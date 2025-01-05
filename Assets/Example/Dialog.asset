@@ -21,16 +21,17 @@ MonoBehaviour:
       interactions:
         attemps: []
       properties:
-      - name: sub1 opt1 prop1
+      - id: 1
+        name: sub1 opt1 propA
         variables:
           members:
-          - rid: 4780732747708104789
+          - rid: 4780732755833258063
     lastOptionID: 1
   lastSubdialogID: 1
   references:
     version: 2
     RefIds:
-    - rid: 4780732747708104789
+    - rid: 4780732755833258063
       type: {class: StringProperty, ns: Artemito, asm: Assembly-CSharp}
       data:
         value: 

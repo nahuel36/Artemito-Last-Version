@@ -18,7 +18,7 @@ namespace Artemito {
 public abstract class PropertyInteraction : Interaction
 {
     public PropertyData data;
-    public string propertyName;
+    public int propertyID;
     public UnityEngine.Object propertyContainer;
     public Property property;
 #if UNITY_EDITOR
@@ -103,11 +103,11 @@ public abstract class PropertyInteraction : Interaction
                 }
 
                 field.Q<DropdownField>("property").choices = choices;
-                field.Q<DropdownField>("property").value = propertyName;
+                field.Q<DropdownField>("property").value = Property.GetNameFromID(localPropertyContainer.GetAllProperties(data),propertyID);
                 field.Q<DropdownField>("property").RegisterValueChangedCallback((evt) =>
                 {
-                    propertyName = evt.newValue;
-                    property = localPropertyContainer.GetProperty(this.data, propertyName);
+                    propertyID = Property.GetIDFromName(localPropertyContainer.GetAllProperties(data),evt.newValue);
+                    property = localPropertyContainer.GetProperty(this.data, Property.GetNameFromID(localPropertyContainer.GetAllProperties(data), propertyID));
                     EditorUtility.SetDirty(myTarget);
                     serializedObject.ApplyModifiedProperties();
                 });
