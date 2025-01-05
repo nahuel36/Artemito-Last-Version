@@ -1,8 +1,10 @@
 *en escena, crear character de cero no funca
 *cambiar campos en change variable no cambia el view
 *al crear un nuevo verb no se le puede asignar el nombre (no se guarda)
+*change types que no aparezca hasta seleccionar property
 
-*todos los tipos de interactions (set variable, talk, etc)
+*todos los tipos de interactions (get variable, talk, etc)
+
 *remove interaction
 *copy en todas las istancias
 *tree view para interaction types
@@ -11,20 +13,15 @@
 
 *usar interface para valores como cantidad de inventario
 
-*change types que no aparezca hasta seleccionar property
-
 *first attempt, second, etc
 *objeto de escena
 *vElem.style.display utils
-*dialog option, inventory, property, verbs por codigo
 
-*namespace artemito
 *revisar todos los using
 
 *propertys en ingame que no cambie el valor del scriptable object
 
-*interaction modes (use, look, etc)
-*properties
+*global propertys
 
 backup
 
@@ -48,3 +45,6 @@ backup
 *list views arreglar make y bind
 *probar que pasa agregar camara cuando property container esta vacio
 *listview set binding (utils)
+*dialog option, inventory, property, verbs por codigo
+*namespace artemito*interaction modes (use, look, etc)
+*properties
