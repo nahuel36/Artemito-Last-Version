@@ -5,6 +5,8 @@
 
 *todos los tipos de interactions (get variable, talk, etc)
 
+*command, background instances infinitas
+
 *organizar los visual tree assets del scriptable object
 
 *remove interaction
