@@ -287,12 +287,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   properties:
   - id: 1
-    name: 
+    name: pre
     variables:
       members:
       - rid: 4780732755833258061
   - id: 2
-    name: 
+    name: pru
     variables:
       members:
       - rid: 4780732755833258062
@@ -305,7 +305,9 @@ MonoBehaviour:
   inventoryInteractions:
   - inventoryID: 5
     interactions:
-      attemps: []
+      attemps:
+      - interactions:
+        - rid: 4780732756905689187
   Name: 
   references:
     version: 2
@@ -344,6 +346,32 @@ MonoBehaviour:
       type: {class: StringProperty, ns: Artemito, asm: Assembly-CSharp}
       data:
         value: 
+    - rid: 4780732756905689187
+      type: {class: CompareProperty, ns: Artemito, asm: Assembly-CSharp}
+      data:
+        data:
+          intData1: -1
+          intData2: -1
+          intData3: -1
+          name: 
+        propertyID: 1
+        propertyContainer: {fileID: 746099209}
+        property:
+          id: 1
+          name: pre
+          variables:
+            members:
+            - rid: 4780732755833258061
+        values:
+          id: 0
+          name: 
+          variables:
+            members:
+            - rid: 4780732762768801863
+    - rid: 4780732762768801863
+      type: {class: IntegerProperty, ns: Artemito, asm: Assembly-CSharp}
+      data:
+        value: 0
 --- !u!4 &746099211
 Transform:
   m_ObjectHideFlags: 0

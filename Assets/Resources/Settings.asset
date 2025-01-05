@@ -20,9 +20,9 @@ MonoBehaviour:
     - qualifiedName: Artemito.CharacterTalk, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       showName: Character talk
-    - qualifiedName: Artemito.GetProperty, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      showName: Get property
+    - qualifiedName: Artemito.CompareProperty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      showName: Compare property
   propertyVariables:
     types:
     - qualifiedName: Artemito.IntegerProperty, Assembly-CSharp, Version=0.0.0.0,

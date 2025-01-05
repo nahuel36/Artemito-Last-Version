@@ -87,7 +87,44 @@ public class CustomEnumFlagsField
         }
     }
 
-    [System.Flags]
+        public void StringToSingleMember(string member_name)
+        {
+            if (members == null)
+                members = new List<PropertyVariable>();
+
+            bool founded = false;
+
+            List<string> toRemove = new List<string>();
+            
+            for (int j = members.Count - 1; j >= 0; j--)
+            {
+                if (members[j].Name != member_name)
+                    toRemove.Add(members[j].Name);
+                else
+                    founded = true;
+            }
+            for (int i = members.Count - 1; i >= 0; i--)
+            {
+                for (int j = 0; j < toRemove.Count; j++)
+                {
+                    if (members[i].Name == toRemove[j])
+                        members.RemoveAt(i);
+                }
+            }
+            if(!founded)
+                members.Add(Settings.Instance.propertyVariables.GetVariableInstanceFromName(member_name));
+            }
+
+        public string GetSingleMemberString()
+        {
+            if (members == null)
+                members = new List<PropertyVariable>();
+
+            return members.Count > 0 ? members[0].Name : "";
+        }
+    
+
+        [System.Flags]
     public enum GenericEnum
     {
         value1 = 1 << 0,

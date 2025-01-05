@@ -23,6 +23,8 @@ public class VisualTreeAssets : ScriptableObject
     [SerializeField] public VisualTreeAsset dialogPropertyField;
     [SerializeField] public VisualTreeAsset inventoryPropertyField;
     [SerializeField] public VisualTreeAsset propertyItem;
+        [Header("Interactions")]
     [SerializeField] public VisualTreeAsset changeProperty;
+    [SerializeField] public VisualTreeAsset compareProperty;
 }
 }

@@ -15,7 +15,8 @@ namespace Artemito {
 
         public void Execute()
         {
-            verbs[0].interactions.attemps[0].interactions[0].Execute();
+            //verbs[0].interactions.attemps[0].interactions[0].Execute();
+            inventoryInteractions[0].interactions.attemps[0].interactions[0].Execute();
         }
     }
 }

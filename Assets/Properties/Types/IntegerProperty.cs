@@ -46,7 +46,7 @@ public class IntegerProperty : PropertyVariable
 
     public override bool Equals(PropertyVariable other)
     {
-        throw new System.NotImplementedException();
+        return value == ((IntegerProperty)other).value;
     }
 
     public override void CopyValues(PropertyVariable valuesContainer)

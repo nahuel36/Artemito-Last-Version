@@ -21,3 +21,4 @@ MonoBehaviour:
   inventoryPropertyField: {fileID: 9197481963319205126, guid: 3f9b0fe9f121ae147a60ca53461041dd, type: 3}
   propertyItem: {fileID: 9197481963319205126, guid: b96e2a21e1f31464bb8aab274cbed183, type: 3}
   changeProperty: {fileID: 9197481963319205126, guid: efe14a7ff822fed4c975209476d727b9, type: 3}
+  compareProperty: {fileID: 9197481963319205126, guid: 163c36490627f6a4585ef710b7e53c82, type: 3}
