@@ -7,6 +7,8 @@ namespace Artemito {
 [System.Serializable] //,ExecuteInEditMode]
     public class Character : RoomInteractuable, PropertiesContainer
     {
+        public IMessageTalker messageTalker;
+
         public string Name;
         public VisualElement PropertyInspectorField(System.Action<PropertyData> onUpdateData)
         {
@@ -15,8 +17,13 @@ namespace Artemito {
 
         public void Execute()
         {
-            //verbs[0].interactions.attemps[0].interactions[0].Execute();
-            inventoryInteractions[0].interactions.attemps[0].interactions[0].Execute();
+            CommandsQueue.Instance.AddCommand((CharacterTalk)verbs[0].interactions.attemps[0].interactions[0]);
+            //inventoryInteractions[0].interactions.attemps[0].interactions[0].Execute();
+        }
+
+        private void Start()
+        {
+            messageTalker = new LucasArtText(this.transform, new TextTimeCalculator());
         }
     }
 }
