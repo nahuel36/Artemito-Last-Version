@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -10,7 +12,9 @@ public interface PropertiesContainer
     public Property GetProperty(PropertyData data, string name);
 
     public List<Property> GetAllProperties(PropertyData data);
-    public VisualElement PropertyInspectorField(UnityEngine.Object myTarget, SerializedObject serializedObject, PropertyData data, System.Action<PropertyData> onUpdateData);
 
-}
+#if UNITY_EDITOR
+        public VisualElement PropertyInspectorField(UnityEngine.Object myTarget, SerializedObject serializedObject, PropertyData data, System.Action<PropertyData> onUpdateData);
+#endif
+    }
 }

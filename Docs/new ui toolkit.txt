@@ -13,6 +13,8 @@
 
 *usar interface para valores como cantidad de inventario
 
+*sistema de comandos
+
 *first attempt, second, etc
 *objeto de escena
 *vElem.style.display utils

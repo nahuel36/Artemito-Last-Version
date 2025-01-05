@@ -1,7 +1,9 @@
 using Artemito;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -26,13 +28,13 @@ public class RoomPropertyContainer : MonoBehaviour, PropertiesContainer
         }
         return null;
     }
-
-    public VisualElement PropertyInspectorField(UnityEngine.Object myTarget, SerializedObject serializedObject, PropertyData data, System.Action<PropertyData> onUpdateData)
+#if UNITY_EDITOR
+        public VisualElement PropertyInspectorField(UnityEngine.Object myTarget, SerializedObject serializedObject, PropertyData data, System.Action<PropertyData> onUpdateData)
     {
         return new VisualElement();
     }
-
-    public void SetProperty(ref Property property, Property values)
+#endif
+        public void SetProperty(ref Property property, Property values)
     {
         
     }
