@@ -29,33 +29,44 @@ public class CompareProperty : PropertyInteraction, ICommand
                     values.variables.StringToSingleMember(evt.newValue);
                     EditorUtility.SetDirty(target);
                 });
-                ((DropdownField)element.Q("type")).choices = property.variables.GetMembersList();
-                ((DropdownField)element.Q("type")).value = values.variables.GetSingleMemberString();
-
-                VisualElement variableValues = element.Q("value");
-                foreach (var variable in values.variables.members)
+                if(property != null && property.variables != null)
+                    ((DropdownField)element.Q("type")).choices = property.variables.GetMembersList();
+                if(values.variables != null)
                 {
-                    variableValues.Add(variable.PropertyValuesInspector(target, serializedTarget));
+                    ((DropdownField)element.Q("type")).value = values.variables.GetSingleMemberString();
+
+                    VisualElement variableValues = element.Q("value");
+                    foreach (var variable in values.variables.members)
+                    {
+                        variableValues.Add(variable.PropertyValuesInspector(target, serializedTarget));
+                    }
                 }
 
                 root.Add(element);
 
                 return root;
-        }
+            }
 #endif
 
         async Task ICommand.Execute()
         {
-            foreach(var variable in property.variables.members)
+            bool equals = false;
+            foreach (var variable in property.variables.members)
             {
                 if(variable.Name == values.variables.members[0].Name)
                 {
                     if (variable.Equals(values.variables.members[0]))
-                        Debug.Log("Equals");
-                    else
-                        Debug.Log("Not equals");
+                        equals = true;
                 }
             }
+
+            Conditional cond = new Conditional();
+            cond.condition = equals;
+            cond.actionIfTrue = Conditional.GetPropertyAction.Continue;
+            cond.actionIfFalse = Conditional.GetPropertyAction.Stop;
+
+            CommandsQueue.Instance.AddConditional(cond);
+
             await Task.Yield();
         }
 

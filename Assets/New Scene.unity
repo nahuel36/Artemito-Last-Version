@@ -627,7 +627,9 @@ MonoBehaviour:
     interactions:
       attemps:
       - interactions:
-        - rid: 4780732762768801879
+        - rid: 4780732776898625665
+        - rid: 4780732776898625666
+        - rid: 4780732776898625663
   inventoryInteractions:
   - inventoryID: 5
     interactions:
@@ -646,11 +648,42 @@ MonoBehaviour:
       type: {class: StringProperty, ns: Artemito, asm: Assembly-CSharp}
       data:
         value: 
-    - rid: 4780732762768801879
+    - rid: 4780732776898625663
       type: {class: CharacterTalk, ns: Artemito, asm: Assembly-CSharp}
       data:
         character: {fileID: 746099210}
-        message: 
+        message: es igual
+    - rid: 4780732776898625665
+      type: {class: CharacterTalk, ns: Artemito, asm: Assembly-CSharp}
+      data:
+        character: {fileID: 746099210}
+        message: hola mundo
+    - rid: 4780732776898625666
+      type: {class: CompareProperty, ns: Artemito, asm: Assembly-CSharp}
+      data:
+        data:
+          intData1: -1
+          intData2: -1
+          intData3: -1
+          name: 
+        propertyID: 1
+        propertyContainer: {fileID: 746099209}
+        property:
+          id: 1
+          name: pre
+          variables:
+            members:
+            - rid: 4780732755833258061
+        values:
+          id: 0
+          name: 
+          variables:
+            members:
+            - rid: 4780732776898625667
+    - rid: 4780732776898625667
+      type: {class: IntegerProperty, ns: Artemito, asm: Assembly-CSharp}
+      data:
+        value: 5
 --- !u!4 &746099211
 Transform:
   m_ObjectHideFlags: 0

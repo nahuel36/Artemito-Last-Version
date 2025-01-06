@@ -16,7 +16,8 @@ namespace Artemito {
 
         public void Execute()
         {
-            CommandsQueue.Instance.AddCommand((CharacterTalk)verbs[0].interactions.attemps[0].interactions[0]);
+            foreach(Interaction interaction in verbs[0].interactions.attemps[0].interactions)
+                CommandsQueue.Instance.AddCommand(interaction);
             //inventoryInteractions[0].interactions.attemps[0].interactions[0].Execute();
         }
 

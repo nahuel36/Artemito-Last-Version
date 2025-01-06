@@ -16,7 +16,7 @@ public class CustomEnumFlagsField
 
     public List<string> GetMembersList()
     {
-            if (members == null) return null;
+            if (members == null) return new List<string> { "" } ;
 
         List<string> membersList = new List<string>();
 

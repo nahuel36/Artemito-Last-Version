@@ -1,3 +1,6 @@
+IMPORTANTE
+*cuando agrego interaccion compare me borra todos los datos anteriores
+
 *en escena, crear character de cero no funca
 *cambiar campos en change variable no cambia el view
 *al crear un nuevo verb no se le puede asignar el nombre (no se guarda)
