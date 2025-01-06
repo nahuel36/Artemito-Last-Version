@@ -8,6 +8,17 @@ namespace Artemito {
     {
         public List<InteractionVerb> verbs;
         public List<InventoryInteraction> inventoryInteractions;
+        public CursorTarget cursorTarget;
+        public string Name;
 
+        private void OnMouseEnter()
+        {
+            cursorTarget.text.text = Name;
+        }
+
+        private void OnMouseExit()
+        {
+            cursorTarget.text.text = "";
+        }
     }
 }

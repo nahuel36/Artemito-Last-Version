@@ -9,7 +9,6 @@ namespace Artemito {
     {
         public IMessageTalker messageTalker;
 
-        public string Name;
         public VisualElement PropertyInspectorField(System.Action<PropertyData> onUpdateData)
         {
             return new VisualElement();
@@ -25,5 +24,7 @@ namespace Artemito {
         {
             messageTalker = new LucasArtText(this.transform, new TextTimeCalculator());
         }
+
+
     }
 }

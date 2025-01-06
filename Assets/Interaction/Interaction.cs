@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using System.Threading.Tasks;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -7,7 +9,7 @@ using UnityEditor;
 namespace Artemito { 
 
     [System.Serializable]
-    public abstract class Interaction
+    public abstract class Interaction: ICommand
     {
         public virtual string Name { get; }
         public virtual Interaction Copy(Interaction inter) {
@@ -20,9 +22,12 @@ namespace Artemito {
             return new VisualElement(); 
         }
 #endif
-        public virtual void Execute() 
-        { 
-        
+
+        Task ICommand.Execute()
+        {
+            throw new System.NotImplementedException();
         }
+
+        public abstract void Skip();
     }
 }

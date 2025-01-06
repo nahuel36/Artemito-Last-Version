@@ -2,12 +2,14 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.Rendering.DebugUI;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 namespace Artemito { 
-public class CompareProperty : PropertyInteraction
+public class CompareProperty : PropertyInteraction, ICommand
 {
         public Property values;
 
@@ -42,10 +44,8 @@ public class CompareProperty : PropertyInteraction
         }
 #endif
 
-        public override void Execute()
+        async Task ICommand.Execute()
         {
-            base.Execute();
-
             foreach(var variable in property.variables.members)
             {
                 if(variable.Name == values.variables.members[0].Name)
@@ -56,7 +56,12 @@ public class CompareProperty : PropertyInteraction
                         Debug.Log("Not equals");
                 }
             }
+            await Task.Yield();
+        }
 
+        public override void Skip()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

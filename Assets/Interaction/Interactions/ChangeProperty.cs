@@ -2,6 +2,8 @@ using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UIElements;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -11,7 +13,7 @@ using UnityEditor.UIElements;
 namespace Artemito
 {
     [System.Serializable]
-    public class ChangeProperty : PropertyInteraction
+    public class ChangeProperty : PropertyInteraction, ICommand
     {
         public override string Name => "Change property";
 
@@ -57,7 +59,7 @@ namespace Artemito
         }
 #endif
 
-        public override void Execute()
+        async Task ICommand.Execute()
         {
             for(int i=0;i< values.variables.members.Count;i++) 
             {
@@ -69,6 +71,7 @@ namespace Artemito
                     }
                 }
             }
+            await Task.Yield();
         }
 
 
@@ -77,6 +80,11 @@ namespace Artemito
             ChangeProperty characterChangeProperty = new ChangeProperty();
             characterChangeProperty.propertyContainer = propertyContainer;
             return characterChangeProperty;
+        }
+
+        public override void Skip()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
