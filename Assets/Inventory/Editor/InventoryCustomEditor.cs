@@ -49,7 +49,7 @@ namespace Artemito {
             return root;
         }
 
-        private void UpdateItems(VisualElement root)
+        private void UpdateItems(VisualElement root, InventoryItem item_to_update = null)
         {
             Inventory myTarget = (Inventory)target;
 
@@ -58,9 +58,16 @@ namespace Artemito {
             for (int j = 0; j < myTarget.items.Count; j++)
             {
                 InventoryItem item = myTarget.items[j];
-                if (itemsButtonsList.FindAll(delegate (ItemData data) { return data.id == item.id; }).Count == 0)
+                if (itemsButtonsList.FindAll(delegate (ItemData data) { return data.id == item.id; }).Count == 0 || (item_to_update != null && item_to_update == item))
                 {
+                    bool founded = false;
                     Button button = new Button();
+                    if (itemsButtonsList.FindAll(delegate (ItemData data) { return data.id == item.id; }).Count > 0)
+                    {
+                        founded = true;
+                        button = itemsButtonsList.Find(delegate (ItemData data) { return data.id == item.id; }).button;
+                    }
+                    
                     button.text = j.ToString();
 
                     if (!string.IsNullOrEmpty(item.name))
@@ -73,20 +80,23 @@ namespace Artemito {
                     }
 
                     button.AddToClassList("button");
-                    button.clicked += () =>
+
+                    if(!founded)
                     {
-                        if (selectedButton != null)
+                        button.clicked += () =>
                         {
-                            selectedButton.RemoveFromClassList("selected");
-                        }
-                        selectedButton = button;
-                        button.AddToClassList("selected");
-                        ShowSelectedPanel(root, item);
-                    };
+                            if (selectedButton != null)
+                            {
+                                selectedButton.RemoveFromClassList("selected");
+                            }
+                            selectedButton = button;
+                            button.AddToClassList("selected");
+                            ShowSelectedPanel(root, item);
+                        };
 
-                    itemsView.Add(button);
-                    itemsButtonsList.Add(new ItemData() { button = button, id = item.id });
-
+                        itemsView.Add(button);
+                        itemsButtonsList.Add(new ItemData() { button = button, id = item.id });
+                    }
 
                 }   
             }
@@ -107,7 +117,7 @@ namespace Artemito {
             nameFieldUserCallback = (evt) =>
             {
                 item.name = evt.newValue; // Actualiza el nombre del modelo
-                UpdateItems(root); // Refresca la lista de botones
+                UpdateItems(root, item); // Refresca la lista de botones
             };
             nameField.RegisterValueChangedCallback(nameFieldUserCallback);
 
@@ -118,7 +128,7 @@ namespace Artemito {
             spriteFieldUserCallback = (evt) =>
             {
                 item.image = (Sprite)evt.newValue; // Actualiza la imagen del modelo
-                UpdateItems(root); // Refresca la lista de botones
+                UpdateItems(root, item); // Refresca la lista de botones
             };
 
             spriteField.RegisterValueChangedCallback(spriteFieldUserCallback);
