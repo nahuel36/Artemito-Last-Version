@@ -3,3 +3,21 @@
     -unity-font-style: bold;
     color: rgb(68, 138, 255);
 }
+
+.button {
+    color: white;
+    width: 75px;
+    height: 75px;
+    -unity-text-outline-width: 0.25px;
+    -unity-text-outline-color: black;
+    -unity-font-style: bold;
+    -unity-text-align: upper-left;
+    text-shadow: 0.5px 0.5px 3px black;
+}
+
+.selected {
+    border-color: blue; /* Color del borde */
+    border-width: 3px;
+    border-style: solid;
+    background-color: rgba(255, 87, 51, 0.2); /* Fondo más claro */
+}
