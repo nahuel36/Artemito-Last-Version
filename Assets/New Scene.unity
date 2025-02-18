@@ -683,7 +683,7 @@ MonoBehaviour:
     - rid: 4780732776898625667
       type: {class: IntegerProperty, ns: Artemito, asm: Assembly-CSharp}
       data:
-        value: 5
+        value: 0
 --- !u!4 &746099211
 Transform:
   m_ObjectHideFlags: 0

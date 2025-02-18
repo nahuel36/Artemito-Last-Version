@@ -19,7 +19,9 @@ MonoBehaviour:
     - name: 
       id: 1
       interactions:
-        attemps: []
+        attemps:
+        - interactions:
+          - rid: 4780732815116861448
       properties:
       - id: 1
         name: sub1 opt1 propA
@@ -35,3 +37,24 @@ MonoBehaviour:
       type: {class: StringProperty, ns: Artemito, asm: Assembly-CSharp}
       data:
         value: 
+    - rid: 4780732815116861448
+      type: {class: ChangeProperty, ns: Artemito, asm: Assembly-CSharp}
+      data:
+        data:
+          intData1: -1
+          intData2: -1
+          intData3: -1
+          name: 
+        propertyID: 0
+        propertyContainer: {fileID: 0}
+        property:
+          id: 0
+          name: 
+          variables:
+            members: []
+        copyContainer: {fileID: 0}
+        values:
+          id: 0
+          name: 
+          variables:
+            members: []

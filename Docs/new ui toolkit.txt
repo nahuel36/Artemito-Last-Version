@@ -12,7 +12,7 @@ IMPORTANTE
 
 *organizar los visual tree assets del scriptable object
 
-*remove interaction
+*remove interaction e inventory (y dialog?)
 *copy en todas las istancias
 *tree view para interaction types
 
@@ -21,6 +21,9 @@ IMPORTANTE
 *usar interface para valores como cantidad de inventario
 
 *sistema de comandos
+
+****puntos de progreso
+****modificacion y comportamiento en real time de todas las escenas
 
 *first attempt, second, etc
 *objeto de escena
