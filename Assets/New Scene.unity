@@ -652,12 +652,14 @@ MonoBehaviour:
       type: {class: CharacterTalk, ns: Artemito, asm: Assembly-CSharp}
       data:
         character: {fileID: 746099210}
-        message: es igual
+        messages: []
     - rid: 4780732776898625665
       type: {class: CharacterTalk, ns: Artemito, asm: Assembly-CSharp}
       data:
         character: {fileID: 746099210}
-        message: hola mundo
+        messages:
+        - ' chamaco'
+        - a
     - rid: 4780732776898625666
       type: {class: CompareProperty, ns: Artemito, asm: Assembly-CSharp}
       data:
