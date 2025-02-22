@@ -653,16 +653,16 @@ MonoBehaviour:
       data:
         character: {fileID: 746099210}
         messages:
-        - es igual
+        - message: es igual
     - rid: 4780732776898625665
       type: {class: CharacterTalk, ns: Artemito, asm: Assembly-CSharp}
       data:
         character: {fileID: 746099210}
         messages:
-        - ' chamaco'
-        - a
-        - p
-        - o
+        - message: chamaco
+        - message: a
+        - message: b
+        - message: c
     - rid: 4780732776898625666
       type: {class: CompareProperty, ns: Artemito, asm: Assembly-CSharp}
       data:

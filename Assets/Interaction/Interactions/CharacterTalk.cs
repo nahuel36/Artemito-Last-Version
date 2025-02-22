@@ -1,17 +1,25 @@
+﻿using System.Collections.Generic;
+using System;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
-using static UnityEngine.GraphicsBuffer;
 
 namespace Artemito
-{ 
+{
+[Serializable]
 public class CharacterTalk : CharacterInteraction, ICommand
 {
 
+        [Serializable]
+        public class TalkItem
+        {
+            public string message;
+        }
+
         public override string Name => "Character talk";
-        public string[] messages;
+        public List<TalkItem> messages;
 
         async Task ICommand.Execute()
         {
@@ -19,9 +27,9 @@ public class CharacterTalk : CharacterInteraction, ICommand
 
             StringBuilder sb = new StringBuilder();
 
-            foreach (string message in messages)
+            foreach (TalkItem message in messages)
             {
-                sb.Append(message);
+                sb.Append(message.message);
             }
 
             talker.Talk(sb.ToString(), true);
@@ -29,52 +37,76 @@ public class CharacterTalk : CharacterInteraction, ICommand
                 await Task.Yield();
         }
 
-        public void UpdateMessages(VisualElement root, Object target, SerializedObject serializedTarget)
-        {
-            root.Clear();
 
-            for (int i=0; i<messages.Length;i++)
-            {
-                TextField text = new TextField("Message");
 
-                text.value = messages[i];
-
-                int index = i;
-
-                text.RegisterValueChangedCallback((evt) =>
-                {
-                    messages[index] = evt.newValue;
-                    EditorUtility.SetDirty(target);
-                    serializedTarget.ApplyModifiedProperties();
-                });
-
-                root.Add(text);
-            }
-        }
-
-        public override VisualElement InspectorField(Object target, SerializedObject serializedTarget)
+        public override VisualElement InspectorField(UnityEngine.Object target, SerializedObject serializedTarget)
         {
             VisualElement root = base.InspectorField(target, serializedTarget);
-
-            VisualElement messagesVE = new VisualElement();
-
-            UpdateMessages(messagesVE, target, serializedTarget);
-
-            root.Add(messagesVE);
-
-            Button addMessage = new Button(() =>
-            {
-                ArrayUtility.Add(ref messages, "");
-                UpdateMessages(messagesVE, target, serializedTarget);
-                EditorUtility.SetDirty(target);
-                serializedTarget.ApplyModifiedProperties();
-            });
-
-            addMessage.text = "Add message";
-            root.Add(addMessage);
+            
+            root.Add(ShowUI(messages, target, serializedTarget));
 
             return root;
         }
+
+        //hay llamadas recursivas en el layout, debido a usasr reorder animado y dymanic size
+        //la unica diferencia que tiene con otros codigos es el text field y que tiene strings
+
+        public static VisualElement ShowUI(List<TalkItem> mesagges_param, UnityEngine.Object myTarget, SerializedObject serializedObject)
+        {
+            VisualElement root = new VisualElement();
+
+            ListView listView = VisualTreeAssets.Instance.customListView.Instantiate().Q<ListView>();
+
+            listView.itemsSource = mesagges_param;
+
+            listView.headerTitle = "Mesagges";
+
+            listView.makeItem = () =>
+            {
+                VisualElement ve = new VisualElement();
+                return ve;
+            };
+            
+            listView.bindItem = (vElem, index) =>
+            {
+                vElem.Clear();
+
+                TextField textField = new TextField();
+
+                textField.value = mesagges_param[index].message;
+
+                int indextemp = index;
+                
+                textField.RegisterValueChangedCallback((evt) =>
+                {
+                    mesagges_param[indextemp].message = evt.newValue;
+                    EditorUtility.SetDirty(myTarget);
+                    serializedObject.ApplyModifiedProperties();
+                });
+                
+                vElem.Add(textField);
+
+            };
+        
+
+            listView.itemsAdded += new Action<IEnumerable<int>>((IEnumerable<int> k) =>
+            {
+                mesagges_param[mesagges_param.Count - 1] = new TalkItem();
+                EditorUtility.SetDirty(myTarget);
+                serializedObject.ApplyModifiedProperties();
+            });
+
+
+
+            root.Add(listView);
+            return root;
+        }
+
+
+
+
+
+
 
         public override void Skip()
         {
