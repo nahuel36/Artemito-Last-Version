@@ -652,7 +652,8 @@ MonoBehaviour:
       type: {class: CharacterTalk, ns: Artemito, asm: Assembly-CSharp}
       data:
         character: {fileID: 746099210}
-        messages: []
+        messages:
+        - es igual
     - rid: 4780732776898625665
       type: {class: CharacterTalk, ns: Artemito, asm: Assembly-CSharp}
       data:
