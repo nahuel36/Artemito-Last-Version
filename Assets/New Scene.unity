@@ -660,6 +660,8 @@ MonoBehaviour:
         messages:
         - ' chamaco'
         - a
+        - p
+        - o
     - rid: 4780732776898625666
       type: {class: CompareProperty, ns: Artemito, asm: Assembly-CSharp}
       data:

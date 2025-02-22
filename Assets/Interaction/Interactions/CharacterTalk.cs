@@ -29,8 +29,10 @@ public class CharacterTalk : CharacterInteraction, ICommand
                 await Task.Yield();
         }
 
-        public void UpdateMessages(VisualElement root, Object target)
+        public void UpdateMessages(VisualElement root, Object target, SerializedObject serializedTarget)
         {
+            root.Clear();
+
             for (int i=0; i<messages.Length;i++)
             {
                 TextField text = new TextField("Message");
@@ -43,6 +45,7 @@ public class CharacterTalk : CharacterInteraction, ICommand
                 {
                     messages[index] = evt.newValue;
                     EditorUtility.SetDirty(target);
+                    serializedTarget.ApplyModifiedProperties();
                 });
 
                 root.Add(text);
@@ -53,13 +56,18 @@ public class CharacterTalk : CharacterInteraction, ICommand
         {
             VisualElement root = base.InspectorField(target, serializedTarget);
 
-            UpdateMessages(root, target);
+            VisualElement messagesVE = new VisualElement();
+
+            UpdateMessages(messagesVE, target, serializedTarget);
+
+            root.Add(messagesVE);
 
             Button addMessage = new Button(() =>
             {
                 ArrayUtility.Add(ref messages, "");
-                UpdateMessages(root, target);
+                UpdateMessages(messagesVE, target, serializedTarget);
                 EditorUtility.SetDirty(target);
+                serializedTarget.ApplyModifiedProperties();
             });
 
             addMessage.text = "Add message";
