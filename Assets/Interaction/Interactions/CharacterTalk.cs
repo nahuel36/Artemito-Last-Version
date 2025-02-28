@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
+using NUnit.Framework;
 
 namespace Artemito
 {
@@ -12,9 +13,17 @@ namespace Artemito
 public class CharacterTalk : CharacterInteraction, ICommand
 {
 
+        public enum ItemType
+        {
+            Message,
+            Property,
+            GameVariable
+        }
+
         [Serializable]
         public class TalkItem
         {
+            public ItemType type;
             public string message;
         }
 
@@ -85,16 +94,29 @@ public class CharacterTalk : CharacterInteraction, ICommand
                 });
                 
                 vElem.Add(textField);
-
             };
-        
 
-            listView.itemsAdded += new Action<IEnumerable<int>>((IEnumerable<int> k) =>
+
+            listView.overridingAddButtonBehavior = (actual_list, actual_button) =>
             {
-                mesagges_param[mesagges_param.Count - 1] = new TalkItem();
-                EditorUtility.SetDirty(myTarget);
-                serializedObject.ApplyModifiedProperties();
-            });
+                GenericMenu menu = new GenericMenu();
+                foreach (ItemType type in Enum.GetValues(typeof(ItemType)))
+                { 
+                    menu.AddItem(new GUIContent(type.ToString()), false, () =>
+                    {
+                        TalkItem item = new TalkItem();
+                        item.type = type;
+                        item.message = "";
+                        mesagges_param.Add(item);
+                        listView.itemsSource = null;
+                        listView.itemsSource = mesagges_param;
+                        listView.Rebuild();
+                        EditorUtility.SetDirty(myTarget);
+                        serializedObject.ApplyModifiedProperties();
+                    });
+                }
+                menu.ShowAsContext();
+            };
 
 
 
