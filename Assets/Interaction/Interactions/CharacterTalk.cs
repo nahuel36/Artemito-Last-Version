@@ -68,7 +68,7 @@ public class CharacterTalk : CharacterInteraction, ICommand
 
             listView.itemsSource = mesagges_param;
 
-            listView.headerTitle = "Mesagges";
+            listView.headerTitle = "Message";
 
             listView.makeItem = () =>
             {
